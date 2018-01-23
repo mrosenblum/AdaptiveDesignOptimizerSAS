@@ -150,12 +150,12 @@ start optimize_designs(
         simulated.annealing.parameter.max.iterations    =  &sap_max_iterations
       )
       print(od)
-      saveRDS(od, file = "C:/work/Michael/Design2/Test6/RDS/od.rds" )
+##    saveRDS(od, file = "C:/work/Michael/Design2/Test6/RDS/od.rds" )
 
-      omat <- ((od[[1]])[[1]])[[1]]
-      omat2 <- ((od[["Two.Stage.Group.Sequential.Design"]])[["design.performance"]])[["Expected.Duration"]]
-      omat2 <- data.frame(omat2)
-      print(omat2)
+##      omat <- ((od[[1]])[[1]])[[1]]
+##      omat2 <- ((od[["Two.Stage.Group.Sequential.Design"]])[["design.performance"]])[["Expected.Duration"]]
+##      omat2 <- data.frame(omat2)
+##      print(omat2)
 
       cnt    <- 1
       odTN   <- list()
@@ -195,14 +195,13 @@ start optimize_designs(
      endsubmit;
 
     * Get the dataset names ;
-    Tname = cats( outlib, ".", "ODTableNames" );
-    print(Tname);
+    Tname = cats( outlib, ".", "Description_of_Datasets" );
     run importDatasetFromR ( Tname,          "odTN" );
-    run importDatasetFromR ( "ODTableNames", "odTN" );
+    run importDatasetFromR ( "tmpTableNames", "odTN" );
 
-    use ODTableNames;
+    use tmpTableNames;
     read all var _char_ into odTNames;
-    close ODTableNames;
+    close tmpTableNames;
 
     do i = 1 to nrow(odTNames);
       Tname = cats( outlib, ".", trim(left(odTNames[i,4])));

@@ -1,4 +1,4 @@
-.  Download R if it is not already installed on your machine.
+1.  Download R if it is not already installed on your machine.
 2.  To download the AdaptiveDesignOptimizer package and its required
     package you will need to start R and enter these two lines at the R prompt:  
 

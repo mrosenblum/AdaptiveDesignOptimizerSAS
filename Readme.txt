@@ -1,15 +1,29 @@
-This software allows SAS users to run (via SAS/IML) the adaptive trial design optimization methods described here: http://rosenblum.jhu.edu
-The user does not need to know how to use R to run this. However, the user does need to have R installed on their machine (or computer cluster), since SAS will (in the background) call R to run the optimizer.
+This software allows SAS users to run (via SAS/IML) the adaptive trial design 
+optimization methods described here: http://rosenblum.jhu.edu
+The user does not need to know how to use R to run this. 
+However, the user does need to have R installed on their machine 
+(or computer cluster), since SAS will (in the background) call R to run the optimizer.
 Software overview:
-The adaptive design optimizer is intended for investigators planning a confirmatory trial where it’s suspected that a subpopulation may benefit more than the overall population. The subpopulation could be defined by a risk score or biomarker measured at baseline. The subpopulation must be defined in advance, e.g., based on prior data or medical knowledge. Adaptive enrichment designs have potential to provide stronger evidence than standard designs about treatment benefits for the subpopulation, its complement, and the combined population.
-Adaptive enrichment designs have a preplanned rule for changing enrollment criteria based on accrued data in an ongoing trial; for example, future enrollment may be restricted to a subpopulation if the complementary subpopulation is not benefiting. This software tool can help in planning such a trial, by
-tailoring an adaptive enrichment design to the scientific goals and logistical constraints of the investigator, and
-comparing performance of the adaptive design to more traditional designs.
-The software searches over hundreds of candidate adaptive designs with the aim of finding one that satisfies the user’s requirements for Type I and II error at the minimum cost. This requires substantial computation and is typically completed within 24 hours, at which time a summary report is produced.
+The adaptive design optimizer is intended for investigators planning a confirmatory trial
+where it’s suspected that a subpopulation may benefit more than the overall population.
+The subpopulation could be defined by a risk score or biomarker measured at baseline. 
+The subpopulation must be defined in advance, e.g., based on prior data or medical knowledge. 
+Adaptive enrichment designs have potential to provide stronger evidence than standard designs
+about treatment benefits for the subpopulation, its complement, and the combined population.
+Adaptive enrichment designs have a preplanned rule for changing enrollment criteria based 
+on accrued data in an ongoing trial; for example, future enrollment may be restricted to a 
+subpopulation if the complementary subpopulation is not benefiting. 
+This software tool can help in planning such a trial, by
+tailoring an adaptive enrichment design to the scientific goals and logistical constraints
+of the investigator, and comparing performance of the adaptive design to more traditional designs.
+The software searches over hundreds of candidate adaptive designs with the aim of finding one
+that satisfies the user’s requirements for Type I and II error at the minimum cost. 
+This requires substantial computation and is typically completed within 24 hours, at which time a summary report is produced.
 
 Instructions for running the trial design optimizer using SAS:
 1.  Download all of the files in this repository to the directory where you will run the SAS code.
-2.  Download and install R if it is not already installed on your machine (or computer cluster): https://cran.r-project.org/ 
+2.  Download and install R if it is not already installed on your machine 
+(or computer cluster): https://cran.r-project.org/ 
 3.  Next, download the AdaptiveDesignOptimizer R package by and its required
     starting R and entering these two lines at the R prompt:  
 

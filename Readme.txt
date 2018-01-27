@@ -1,15 +1,16 @@
-This software allows SAS users to run (via SAS/IML) the adaptive design optimizer code described here: http://rosenblum.jhu.edu
+This software allows SAS users to run (via SAS/IML) the adaptive trial design optimizer described from http://rosenblum.jhu.edu
 The user does not need to know how to use R to run this. However, the user does need to have R installed on their machine (or computer cluster).
 Software overview:
 The adaptive design optimizer is intended for investigators planning a confirmatory trial where it’s suspected that a subpopulation may benefit more than the overall population. The subpopulation could be defined by a risk score or biomarker measured at baseline. The subpopulation must be defined in advance, e.g., based on prior data or medical knowledge. Adaptive enrichment designs have potential to provide stronger evidence than standard designs about treatment benefits for the subpopulation, its complement, and the combined population.
 Adaptive enrichment designs have a preplanned rule for changing enrollment criteria based on accrued data in an ongoing trial; for example, future enrollment may be restricted to a subpopulation if the complementary subpopulation is not benefiting. This software tool can help in planning such a trial, by
 tailoring an adaptive enrichment design to the scientific goals and logistical constraints of the investigator, and
 comparing performance of the adaptive design to more traditional designs.
-The software searches over hundreds of candidate adaptive designs with the aim of finding one that satisfies the user’s requirements for Type I and II error at the minimum cost. This requires substantial computation and is typically completed within 24 hours, at which time a summary report is emailed to the user.
+The software searches over hundreds of candidate adaptive designs with the aim of finding one that satisfies the user’s requirements for Type I and II error at the minimum cost. This requires substantial computation and is typically completed within 24 hours, at which time a summary report is produced.
 
 Instructions for running the trial design optimizer using SAS:
-1.  First download R if it is not already installed on your machine (or computer cluster).
-2.  Next, download the AdaptiveDesignOptimizer R package by and its required
+1.  Download all of the files in this repository to the directory where you will run the SAS code.
+2.  Download and install R if it is not already installed on your machine (or computer cluster): https://cran.r-project.org/ 
+3.  Next, download the AdaptiveDesignOptimizer R package by and its required
     starting R and entering these two lines at the R prompt:  
 
        install.packages("devtools")
@@ -19,7 +20,7 @@ Instructions for running the trial design optimizer using SAS:
     You will need to note where the library was stored.
     As an example, on my Windows machine this was given as "C:/Users/uname/Documents/R/win-library/3.4".
  
-3.  Change the SAS configuration file to include the two lines:
+4.  Change the SAS configuration file to include the two lines:
 
        -RLANG
        -SET R_HOME "path to R executable"
@@ -28,7 +29,7 @@ Instructions for running the trial design optimizer using SAS:
     second gives the location of the R executible on your pc.  On my pc the R
     executable is at "C:\Program Files\R\R-3.4.0".
 
-4.  To check that your installation worked, run each of the trial design optimizer examples 
+5.  To check that your installation worked, run each of the trial design optimizer examples 
     example1.sas
     example2.sas
     example3.sas
